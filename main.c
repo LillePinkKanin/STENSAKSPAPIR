@@ -15,7 +15,7 @@ int main(){
 
     printf("Welcome to ROCK PAPER SCISSORS!\n"); // Welcome message/
 
-    char start; // Welcome menu, press P to play - otherwise it will ask you to press P
+    char start; // Welcome menu, press P to play E to exit - otherwise it will ask you to press P or E
     do {
         printf("You are going to play best of 5:\n");
         printf("Press P to play or E to exit: ");
@@ -37,7 +37,7 @@ int main(){
     int computerScore = 0;
     int round = 1;
 
-    while(userScore < 3 && computerScore < 3){
+    while(userScore < 3 && computerScore < 3){  //The scores of user and computer are counted and the round nr is presented to the user
         printf("\n");
         printf("Round: %d\n", round);
         printf("\n");
@@ -46,7 +46,7 @@ int main(){
     int userChoice = getUserChoice();
     int computerChoice = getComputerChoice();
 
-    switch(userChoice){
+    switch(userChoice){ //Presenting the users choice
         case 1: 
             printf("You chose ROCK! \n");
             break;
@@ -64,7 +64,7 @@ int main(){
             break;
     }
 
-        switch(computerChoice){
+        switch(computerChoice){ //Presenting the computers choice
         case 1: 
             printf("Computer chose ROCK! \n");
             break;
@@ -82,7 +82,7 @@ int main(){
             break;
     }
 
-    int result = checkWinner(userChoice, computerChoice);
+    int result = checkWinner(userChoice, computerChoice); //Compares the value of user and computerchoice and gives the user a corresponding message 
     if(result == 1) userScore++;
     else if(result == -1) computerScore++;
 
@@ -90,7 +90,7 @@ int main(){
     round++;
     }
 
-    if(userScore == 3){
+    if(userScore == 3){ //When one of the players have 3 wins the user is informed if they won or lost
         printf("Congratulations! You won best of 5!");
     } else{
         printf("Sorry, you have lost!\n");
